@@ -11,7 +11,7 @@ $env:PYTHONPATH = "$PWD\src"
 python -m unittest discover -s tests -v
 ```
 
-Result on 2026-09-04: **42 tests passed**.
+Result on 2026-09-04: **43 tests passed**. The final corrected Slack run is recorded in [`FINAL_SLACK_PROOF.md`](FINAL_SLACK_PROOF.md).
 
 Coverage includes collector parsing, safe host validation, classification of recent vs. historical announcements, negative/rejection language, safe company-name extraction, provider rate-limit spacing, SQLite persistence, changed-content behavior, failed-delivery retry, non-consuming preview mode, bootstrap suppression, Slack escaping, and health endpoints.
 
