@@ -38,6 +38,24 @@ class CompanyQualityTests(unittest.TestCase):
         self.assertEqual(result.status, SignalStatus.EARLY_SIGNAL)
         self.assertEqual(result.company_name, "Unknown company")
 
+    def test_company_is_inferred_from_to_build_yc_phrase(self):
+        item = Signal(
+            source=Source.LINKEDIN,
+            source_id="opentrade",
+            source_url="https://www.linkedin.com/posts/opentrade",
+            company_name="Unknown company",
+            founder_name="OpenTrade founder",
+            text=(
+                "We got into Y Combinator S26. To build OpenTrade (YC S26), "
+                "Tinder for AI-native investing."
+            ),
+        )
+
+        result = classify_social_signal(item)
+
+        self.assertEqual(result.status, SignalStatus.EARLY_SIGNAL)
+        self.assertEqual(result.company_name, "OpenTrade")
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -58,6 +58,7 @@ _SELF_ANNOUNCEMENT = re.compile(
 )
 _COMPANY_PATTERNS = (
     r"\b(?:all[- ]in|working)\s+on\s+([A-Z][A-Za-z0-9&.'-]*(?:\s+[A-Z][A-Za-z0-9&.'-]*){0,3})\s*\(\s*YC\s+[SWF]\d{2}\s*\)",
+    r"\bto\s+build\s+([A-Z][A-Za-z0-9&.'-]*(?:\s+[A-Z][A-Za-z0-9&.'-]*){0,3})\s*\(\s*YC\s+[SWF]\d{2}\s*\)",
     r"\b(?:building|launching|working on)\s+(@[A-Za-z0-9_]{2,30})\b",
 )
 
@@ -68,7 +69,7 @@ def normalize_company(value: str) -> str:
 
 def _infer_company_name(text: str) -> str | None:
     for pattern in _COMPANY_PATTERNS:
-        match = re.search(pattern, text)
+        match = re.search(pattern, text, re.I)
         if match:
             return match.group(1).strip(" .,-")
     return None
