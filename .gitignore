@@ -1,0 +1,7 @@
+.env
+data/*.db*
+data/*.pid
+logs/
+__pycache__/
+*.pyc
+.venv/

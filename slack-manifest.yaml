@@ -1,0 +1,14 @@
+display_information:
+  name: YC Launch Monitor
+features:
+  bot_user:
+    display_name: YC Launch Monitor
+    always_online: false
+oauth_config:
+  scopes:
+    bot:
+      - chat:write
+settings:
+  org_deploy_enabled: false
+  socket_mode_enabled: false
+  token_rotation_enabled: false
