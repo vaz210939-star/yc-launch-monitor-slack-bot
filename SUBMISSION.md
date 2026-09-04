@@ -2,7 +2,7 @@
 
 ## Repository
 
-GitHub URL: `ADD_AFTER_PUBLISHING`
+GitHub URL: <https://github.com/vaz210939-star/yc-launch-monitor-slack-bot>
 
 ## Working bot
 
